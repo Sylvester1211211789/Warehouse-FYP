@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Smart Warehouse</title>
+</head>
+<body>
+    <header> 
+        <div class="head_text">
+        <h1>CRSST WAREHOUSE</h1>
+      </div>
+      <div class="cubeh" id="aiButton">
+        <div id="message">
+          <p>This is an automatic message!</p>
+        </div>
+          <div class = "ai">
+          <p>Chat Cube</p></div>
+      <div class="cube-loader">
+        <div class="cube-top"></div>
+        <div class="cube-wrapper">
+          <span style="--i:0" class="cube-span"></span>
+          <span style="--i:1" class="cube-span"></span>
+          <span style="--i:2" class="cube-span"></span>
+          <span style="--i:3" class="cube-span"></span>
+
+        </div>
+      </div>
+    </div>
+  
+  <div class="aiPopup" id="aiPopup">
+    <div class="aiContent" id="messageContainer">
+      <span class="close" id="closePopup">&times;</span>
+      <div id="messages">      
+      <h2>CHAT CUBE</h2>
+          <p>How can I assist you today? <br><br><b>'Account'</b> account problem <br><b>'Bound'</b> in/outbound problem <br><b>'Payment'</b> payment problem</p><br>
+      <div class='navbarss'>
+        <input type="text" id="userInput" placeholder="Search">
+      </div>
+    </div>
+        </div>
+  </div>
+        
+    </header>
+
+    <div class="navbar">
+  <a href="main.html">Home</a>
+  <a href="user_array.php">Control</a>
+  <a href="account_setting.php">Profile</a>       
+  <div class="dropdown">
+    <button class="dropbtn"> ☰
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="user_payment.php">Payment</a>
+      <a href="#">In/Outbound History</a>
+    </div>
+  </div> 
+</div>
+    <main>
+        <div class = 'introduction'>
+        <p >CRSST which is Centre of Remote Sensing & Surveillance Technologies is in MMU Malacca, MMU Cyberjaya and Nusajaya. CRSST setup is in 1996 and fully operational at 1197. The primary aim of CRSST is to promote the growth of research and development in the areas of advanced remote sensing and surveillance technologies, which encompasses advanced remote sensing systems, vision-based surveillance solutions, and their related applications. In 1997 to 2005 CRSST was named as Remote Sensing group, 2006 – 2010 was named as Centre for Applied EM and in 2011 until now is CRSST.</p>
+    </div> <!-- Your content goes here -->
+    <div class="row">
+        <div class="column">
+          <img src="https://www.ssents.com/hubfs/optomize-warehouse-space-with-pallet-racks-1.jpeg#keepProtocol" alt="Snow" style="width:100%">
+      
+        </div>
+        <h2 style="text-align:center;">Space Optimization</h2>
+       <p class="texts">
+            Auto warehouses make better use of available space by utilizing vertical
+             storage systems, compact storage configurations, and optimized layouts. 
+             This allows businesses to store more goods in a smaller footprint,<br> ultimately 
+             saving on storage costs. </p>
+          
+      
+      </div>
+      <div class="row">
+        <div class="columnss">
+          <img src="https://th.bing.com/th/id/OIP.y3Zgshtf48P03jBOe0dTHwHaEo?pid=ImgDet&rs=1" alt="Snow" style="width:100%">
+      
+        </div>
+        <h2 style="text-align:center; margin-top:100px;">Increased Efficiency</h2>
+          <p class="texts">Auto warehouses utilize advanced robotics, conveyors,
+             and computer systems to automate the storage and retrieval of goods.
+              This results in significantly faster and more efficient handling of 
+              inventory compared to manual methods. It reduces the need for human 
+             intervention, leading to higher productivity.</p>
+          
+      
+      </div>
+      
+      <div class = 'introductions'>
+      
+        <h1 style="text-align:center; margin-top:10px;">Award <br>    <img width="100" height="50" src="https://inventx.mmu.edu.my/img/i-logo.png"></h1>
+        <p style="font-size:25px; margin-top:15px; color:rgb(255, 255, 255); font-family: 'Arial', sans-serif;   text-align: center;">Gold Medal in Creating Smart Inbound Management in INVENTX 2023</p>
+        <div class="containers">
+          <a href="https://www.youtube.com/watch?v=1I6pmVsmGEU" >
+          <img width="520" height="280" src="pp.png" >
+          <div class="overlay">
+              <div class="text">Ctrl + Right Click to watch our Smart Inbound Management Video</div>
+            </div>
+                </a></div>
+    </div> <!-- Your content goes here -->
+</main>
+    <footer>
+        &copy; 2023 CRSST Warehouse
+        <div class="footer">By Sylvester, Samuel & Tai</div>
+    </footer>
+
+    <script>
+      // AI Button
+        document.getElementById("aiButton").addEventListener("click", function() {
+      document.getElementById("aiPopup").style.display = "block";
+    });
+
+    document.getElementById("closePopup").addEventListener("click", function() {
+      document.getElementById("aiPopup").style.display = "none";
+    });
+
+    document.getElementById("userInput").addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) { // Check if Enter key is pressed
+        var choice = document.getElementById("userInput").value;
+        document.getElementById("userInput").value = ""; // Clear input field
+        if (choice === "Account" || choice ==="account") {
+          hideButtons();
+          addUserMessage("Account");
+          addTypingIndicator();
+          setTimeout(function() {
+            addMessage("If you don't have any account you can click <a href=''>Create Account</a> or if you have any problem with your account, you can choose from below.<div class='bot'><a href='#'>Change Company Name</a> <a href='#'>Change Name</a> <a href='#'>Change Address</a> <a href='#'>Change Phone Number</a> <a href='#'>Change Password</a> <br>'Back' to go back to Menu", "aiMessage");
+            clearTypingIndicator();
+          }, 2000); // Simulate typing for 2 seconds
+        } else if (choice === "bound" || choice === "Bound") {
+          // For Inbound & Outbound
+                  hideButtons();
+          addUserMessage("Inbound & Outbound");
+          addTypingIndicator();
+          setTimeout(function() {
+            addMessage("For Inbound Outbound and location, you can click the bottom button .  <div class='bot'> <a href=''>In/outbound</a></div> If you have any other problem or queries, you can contact our support team at CRSSTWare@gmail.com.", "aiMessage");
+            clearTypingIndicator();
+          }, 2000);
+        } else if (choice === "Payment" || choice === "payment") {
+          // For Payment
+                      hideButtons();
+          addUserMessage("Payment");
+          addTypingIndicator();
+          setTimeout(function() {
+            addMessage("For payment and payment history, you can choose bottom button .  <div class='bot'> <a href=''>Payment</a> <a href=''>Payment History</a></div>  For payment-related queries, please check our <a href='#'>FAQ</a> section or contact our billing department 0630995555.", "aiMessage");
+            clearTypingIndicator();
+          }, 2000);
+        }
+       else if (choice === "4") {
+          // For Payment
+                     hideButtons();
+          addUserMessage("Back");
+          addTypingIndicator();
+          setTimeout(function() {
+            addMessage(" <br><br><b>'Account'</b> account problem <br><b>'Bound'</b> in/outbound problem <br><b>'Payment'</b> payment problem<br>", "aiMessage");
+            clearTypingIndicator();
+          }, 2000);
+        }   
+          
+          
+          else {
+          // Invalid choice
+          addMessage("Invalid choice. Please enter 'Account' for account problem, 'Bound' for inbound and outbound problem, or 'Payment' for payment problem.","aiMessage");
+        }
+      }
+    });
+
+    function hideButtons() {
+      document.querySelectorAll(".bot a").forEach(function(button) {
+        button.style.display = "none";
+      });
+    }
+
+    function addTypingIndicator() {
+      var messages = document.getElementById("messages");
+      var typingIndicator = document.createElement("div");
+      typingIndicator.className = "typingIndicator";
+      typingIndicator.innerHTML = "Typing <span class='dot-1'></span><span class='dot-2'></span><span class='dot-3'></span>";
+      messages.appendChild(typingIndicator);
+      document.getElementById("messageContainer").scrollTop = document.getElementById("messageContainer").scrollHeight; // Scroll to the bottom
+    }
+
+    function addUserMessage(message) {
+      var messages = document.getElementById("messages");
+      var userMessage = document.createElement("div");
+      userMessage.className = "userMessage";
+      userMessage.textContent = message;
+      messages.appendChild(userMessage);
+      document.getElementById("messageContainer").scrollTop = document.getElementById("messageContainer").scrollHeight; // Scroll to the bottom
+    }
+
+    function addMessage(message, className) {
+      var messages = document.getElementById("messages");
+      var newMessage = document.createElement("div");
+      newMessage.className = className;
+      newMessage.innerHTML = message;
+      messages.appendChild(newMessage);
+      document.getElementById("messageContainer").scrollTop = document.getElementById("messageContainer").scrollHeight; // Scroll to the bottom
+    }
+
+    function clearTypingIndicator() {
+      var typingIndicators = document.getElementsByClassName("typingIndicator");
+      for (var i = typingIndicators.length - 1; i >= 0; i--) {
+        typingIndicators[i].remove();
+      }
+    }
+      // Function to show message
+      function showMessage() {
+        const message = document.getElementById('message');
+        message.style.display = 'block';
+    
+        // Hide message after 4 seconds
+        setTimeout(function() {
+          message.style.display = 'none';
+        }, 4000); // 4 seconds in milliseconds
+      }
+    
+      // Call showMessage function automatically
+      showMessage();
+    </script>
+</body>
+</html>
+
