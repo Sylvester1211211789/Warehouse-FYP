@@ -1,0 +1,447 @@
+<?xml version="1.0"?>
+<robot name="C:/Users/12112/Downloads/Robot.urdf" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="base_link">
+  </link>
+  <joint name="linear motor" type="prismatic">
+    <parent link="base_link"/>
+    <child link="solid"/>
+    <axis xyz="0 1 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="solid">
+  </link>
+  <joint name="linear motor2" type="prismatic">
+    <parent link="solid"/>
+    <child link="solid_0"/>
+    <axis xyz="1 0 0"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="solid_0">
+  </link>
+  <joint name="rotational motor" type="continuous">
+    <parent link="solid_0"/>
+    <child link="base_link"/>
+    <axis xyz="0.000362 -0.000099 1"/>
+    <limit effort="10" velocity="10"/>
+    <origin xyz="0 0 0" rpy="-0.000099 -0.000362 1.550428"/>
+  </joint>
+  <link name="base_link">
+    <visual>
+      <origin xyz="-0.000455 -0.099833 0.091749" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.000455 -0.099833 0.091749" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="CASTER_WHEEL_BACK_LEFT_JOINT" type="continuous">
+    <parent link="base_link"/>
+    <child link="caster_back_left_1_link"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.173955 0.002167 0.058249" rpy="0 0 -0.099242"/>
+  </joint>
+  <link name="caster_back_left_1_link">
+    <visual>
+      <origin xyz="-0.003 0 -0.022" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.036 0.032 0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.003 0 -0.022" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.036 0.032 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="SMALL_WHEEL_JOINT" type="continuous">
+    <parent link="caster_back_left_1_link"/>
+    <child link="caster_back_left_2_link"/>
+    <axis xyz="0 -0.000004 1"/>
+    <origin xyz="-0.016 0 -0.04" rpy="-1.5708 -0.055652 0"/>
+  </joint>
+  <link name="caster_back_left_2_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.025" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.025" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="CASTER_WHEEL_BACK_RIGHT_JOINT" type="continuous">
+    <parent link="base_link"/>
+    <child link="caster_back_right_1_link"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.1735 -0.102 -0.0335" rpy="0 0 -0.100138"/>
+  </joint>
+  <link name="caster_back_right_1_link">
+    <visual>
+      <origin xyz="-0.003 0 -0.022" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.036 0.032 0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.003 0 -0.022" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.036 0.032 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="SMALL_WHEEL_JOINT_0" type="continuous">
+    <parent link="caster_back_right_1_link"/>
+    <child link="caster_back_right_2_link"/>
+    <axis xyz="0 -0.000004 1"/>
+    <origin xyz="-0.016 0 -0.04" rpy="-1.5708 -0.055777 0"/>
+  </joint>
+  <link name="caster_back_right_2_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.025" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.025" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="CASTER_WHEEL_FRONT_LEFT_JOINT" type="continuous">
+    <parent link="base_link"/>
+    <child link="caster_front_left_1_link"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.1695 0.102 -0.0335" rpy="0 0 -0.106627"/>
+  </joint>
+  <link name="caster_front_left_1_link">
+    <visual>
+      <origin xyz="-0.003 0 -0.022" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.036 0.032 0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.003 0 -0.022" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.036 0.032 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="SMALL_WHEEL_JOINT_1" type="continuous">
+    <parent link="caster_front_left_1_link"/>
+    <child link="caster_front_left_2_link"/>
+    <axis xyz="0 -0.000004 1"/>
+    <origin xyz="-0.016 0 -0.04" rpy="-1.5708 -0.055788 0"/>
+  </joint>
+  <link name="caster_front_left_2_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.025" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.025" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="CASTER_WHEEL_FRONT_RIGHT_JOINT" type="continuous">
+    <parent link="base_link"/>
+    <child link="caster_front_right_1_link"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.1695 -0.102 -0.0335" rpy="0 0 -0.107566"/>
+  </joint>
+  <link name="caster_front_right_1_link">
+    <visual>
+      <origin xyz="-0.003 0 -0.022" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.036 0.032 0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="-0.003 0 -0.022" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.036 0.032 0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="SMALL_WHEEL_JOINT_2" type="continuous">
+    <parent link="caster_front_right_1_link"/>
+    <child link="caster_front_right_2_link"/>
+    <axis xyz="0 -0.000004 1"/>
+    <origin xyz="-0.016 0 -0.04" rpy="-1.5708 -0.055815 0"/>
+  </joint>
+  <link name="caster_front_right_2_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.025" length="0.015"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.025" length="0.015"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_left_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_left_link"/>
+    <axis xyz="0 -0.000004 -1"/>
+    <limit effort="10" velocity="10.1523"/>
+    <origin xyz="0 0.2022 0" rpy="1.5708 0.021218 0"/>
+  </joint>
+  <link name="wheel_left_link">
+    <visual>
+      <origin xyz="0 0 0.0002" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0985" length="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.0002" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0985" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="wheel_right_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_right_link"/>
+    <axis xyz="0 -0.000004 -1"/>
+    <limit effort="10" velocity="10.1523"/>
+    <origin xyz="0 -0.2022 0.0002" rpy="1.5708 -0.545914 0"/>
+  </joint>
+  <link name="wheel_right_link">
+    <visual>
+      <origin xyz="0 0 -0.0002" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0985" length="0.04"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -0.0002" rpy="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.0985" length="0.04"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="base_sonar_01_link">
+  </link>
+  <joint name="base_link_base_sonar_01_link_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_sonar_01_link"/>
+    <origin xyz="-0.183 -0.183 0.1728" rpy="0 0 -2.356185"/>
+  </joint>
+  <link name="base_sonar_02_link">
+  </link>
+  <joint name="base_link_base_sonar_02_link_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_sonar_02_link"/>
+    <origin xyz="-0.259 0 0.173" rpy="0 0 -3.141585"/>
+  </joint>
+  <link name="base_sonar_03_link">
+  </link>
+  <joint name="base_link_base_sonar_03_link_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_sonar_03_link"/>
+    <origin xyz="-0.183 0.183 0.173" rpy="0 0 2.3562"/>
+  </joint>
+  <link name="base_footprint">
+  </link>
+  <joint name="base_link_base_footprint_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="base_footprint"/>
+    <origin xyz="0 0 -0.095" rpy="0 0 0"/>
+  </joint>
+  <link name="gyro">
+  </link>
+  <joint name="base_link_gyro_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="gyro"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="inertial unit">
+  </link>
+  <joint name="base_link_inertial unit_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="inertial unit"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="accelerometer">
+  </link>
+  <joint name="base_link_accelerometer_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="accelerometer"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="lidar">
+  </link>
+  <joint name="solid_lidar_joint" type="fixed">
+    <parent link="solid"/>
+    <child link="lidar"/>
+    <origin xyz="0.619996 0.070005 1.56" rpy="0 0 -3.141585"/>
+  </joint>
+  <link name="gps">
+  </link>
+  <joint name="solid_gps_joint" type="fixed">
+    <parent link="solid"/>
+    <child link="gps"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="led1(1)">
+  </link>
+  <joint name="solid_led1(1)_joint" type="fixed">
+    <parent link="solid"/>
+    <child link="led1(1)"/>
+    <origin xyz="0.06 0.245 0.25" rpy="0 0 0"/>
+  </joint>
+  <link name="led1">
+  </link>
+  <joint name="solid_led1_joint" type="fixed">
+    <parent link="solid"/>
+    <child link="led1"/>
+    <origin xyz="0.06 0.245 0.25" rpy="0 0 0"/>
+  </joint>
+  <link name="receiver">
+  </link>
+  <joint name="solid_receiver_joint" type="fixed">
+    <parent link="solid"/>
+    <child link="receiver"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link name="led0">
+  </link>
+  <joint name="solid_led0_joint" type="fixed">
+    <parent link="solid"/>
+    <child link="led0"/>
+    <origin xyz="-0.06 0.235 0.25" rpy="0 0 0"/>
+  </joint>
+  <joint name="l10" type="prismatic">
+    <parent link="solid"/>
+    <child link="solid(2)"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="-1.48 -0.04 0.68" rpy="0 0 0"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="solid(2)">
+  </link>
+  <link name="solid(1)">
+  </link>
+  <joint name="solid(2)_solid(1)_joint" type="fixed">
+    <parent link="solid(2)"/>
+    <child link="solid(1)"/>
+    <origin xyz="0.811905 0.01413 -0.941925" rpy="0.013901 -0.003109 -1.565129"/>
+  </joint>
+  <joint name="l1" type="prismatic">
+    <parent link="solid"/>
+    <child link="solid(4)"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="-0.22 -0.04 1.05" rpy="0 0 0"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="solid(4)">
+  </link>
+  <link name="solid(1)_3">
+  </link>
+  <joint name="solid(4)_solid(1)_3_joint" type="fixed">
+    <parent link="solid(4)"/>
+    <child link="solid(1)_3"/>
+    <origin xyz="0.815102 0.013433 -1.171902" rpy="0.013901 -0.003109 -1.565129"/>
+  </joint>
+  <joint name="l2" type="prismatic">
+    <parent link="solid"/>
+    <child link="solid(1)_4"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.02 0.21 -0.2" rpy="0 0 0"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="solid(1)_4">
+  </link>
+  <link name="solid(3)">
+  </link>
+  <joint name="solid(1)_4_solid(3)_joint" type="fixed">
+    <parent link="solid(1)_4"/>
+    <child link="solid(3)"/>
+    <origin xyz="-0.012618 -1.01866 -0.228098" rpy="-0.00728 -0.004675 0.002917"/>
+  </joint>
+  <joint name="r2" type="prismatic">
+    <parent link="solid"/>
+    <child link="solid(5)"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.01 1.79 -0.22" rpy="0 0 0"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="solid(5)">
+  </link>
+  <link name="solid(3)_5">
+  </link>
+  <joint name="solid(5)_solid(3)_5_joint" type="fixed">
+    <parent link="solid(5)"/>
+    <child link="solid(3)_5"/>
+    <origin xyz="-0.012618 -1.01866 -0.228098" rpy="-0.00728 -0.004675 0.002917"/>
+  </joint>
+  <joint name="s1" type="prismatic">
+    <parent link="solid"/>
+    <child link="solid(3)_6"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0.04 0 0.26" rpy="0 0 0"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="solid(3)_6">
+  </link>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1.01 0.8 0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="1.01 0.8 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="e" type="prismatic">
+    <parent link="solid(3)"/>
+    <child link="distance"/>
+    <axis xyz="0 0 1"/>
+    <origin xyz="0 -0.55 0.4" rpy="0 0 1.5708"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="distance">
+  </link>
+  <joint name="e2" type="prismatic">
+    <parent link="solid(3)"/>
+    <child link="distance2"/>
+    <axis xyz="-1 -0.000004 0.000002"/>
+    <origin xyz="-0.000005 0.57 0.4" rpy="-3.141591 0.000002 -1.570792"/>
+    <limit effort="10" velocity="10"/>
+  </joint>
+  <link name="distance2">
+  </link>
+  <link name="ss">
+  </link>
+  <joint name="solid_ss_joint" type="fixed">
+    <parent link="solid"/>
+    <child link="ss"/>
+    <origin xyz="0.220001 0 1.71" rpy="3.141593 1.570793 3.141593"/>
+  </joint>
+</robot>
