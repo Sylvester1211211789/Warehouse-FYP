@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <link rel="icon" type="image/png" href="https://cyberbotics.com/assets/images/webots.png">
+
+  <script src="https://cyberbotics.com/wwi/R2023b/RobotWindow.js"></script>
+
+  <script type="text/javascript">
+    window.onload = () => {
+
+      // Initialize the robot window
+      window.robotWindow = new RobotWindow();
+
+      // Receive messages from the controller and show them in the robot window
+      window.robotWindow.receive = (message) => {
+        document.getElementById('counter').innerHTML = message;
+      };
+
+      // Send messages from the robot window to the controller
+      let counter = 0;
+      setInterval(() => {
+        window.robotWindow.send(counter++);
+      }, 1000);
+    };
+  </script>
+</head>
+
+<body>
+  <h1 id="counter"></h1>
+</body>
+
+</html>

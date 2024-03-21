@@ -1,0 +1,361 @@
+#VRML_SIM R2023a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the C:/Users/samue/OneDrive - mmu.edu.my/folder personal/Documents/Robot.urdf
+# Extracted from: C:\Robot.urdf
+
+PROTO  idontkow[ #VRML_SIM R2023a utf8
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "samuel"  # Is `Robot.name`.
+  field  SFString    controller      "void"                                                                       # Is `Robot.controller`.
+  field  MFString    controllerArgs  []                                                                           # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""                                                                           # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE                                                                        # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE                                                                         # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE                                                                        # Is `Robot.selfCollision`.
+  field  SFBool      staticBase      TRUE                                                                         # Defines if the robot base should be pinned to the static environment.
+  field  SFVec3f     scale           10 10 10
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    scale IS scale
+    children [
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 1.000000 0.000000
+          anchor 0.035000 0.030000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "wheel1"
+            maxVelocity 10.0
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "wheel1_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.035000 0.030000 0.000000
+          rotation -0.911099 0.286176 0.296650 1.689267
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.500000 0.500000 0.500000
+                roughness 1.000000
+                metalness 0
+              }
+              geometry Cylinder {
+                radius 0.015
+                height 0.02
+              }
+            }
+          ]
+          name "solid(2)"
+          boundingObject Cylinder {
+            radius 0.015
+            height 0.02
+          }
+          physics Physics {
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000000 1.000000 -0.000001
+          anchor -0.030000 -0.030000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "wheel4"
+            maxVelocity 10.0
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "wheel4_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.030000 -0.030000 0.000000
+          rotation -0.482428 0.610345 0.628285 2.260290
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.500000 0.500000 0.500000
+                roughness 1.000000
+                metalness 0
+              }
+              geometry Cylinder {
+                radius 0.015
+                height 0.02
+              }
+            }
+          ]
+          name "solid(1)"
+          boundingObject Cylinder {
+            radius 0.015
+            height 0.02
+          }
+          physics Physics {
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -0.000001 1.000000 -0.000000
+          anchor 0.035000 -0.030000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "wheel2"
+            maxVelocity 10.0
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "wheel2_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.035000 -0.030000 0.000000
+          rotation -0.474707 0.613300 0.631281 2.272568
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.500000 0.500000 0.500000
+                roughness 1.000000
+                metalness 0
+              }
+              geometry Cylinder {
+                radius 0.015
+                height 0.02
+              }
+            }
+          ]
+          name "solid(3)"
+          boundingObject Cylinder {
+            radius 0.015
+            height 0.02
+          }
+          physics Physics {
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis 0.000001 1.000000 0.000000
+          anchor -0.030000 0.030000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "wheel3"
+            maxVelocity 10.0
+            maxTorque 10.0
+          }
+          PositionSensor {
+            name "wheel3_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation -0.030000 0.030000 0.000000
+          rotation -0.989754 0.098117 0.103735 1.607423
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 0.500000 0.500000 0.500000
+                roughness 1.000000
+                metalness 0
+              }
+              geometry Cylinder {
+                radius 0.015
+                height 0.02
+              }
+            }
+          ]
+          name "solid"
+          boundingObject Cylinder {
+            radius 0.015
+            height 0.02
+          }
+          physics Physics {
+          }
+        }
+      }
+      SliderJoint {
+        jointParameters JointParameters {
+          axis 0.000000 -0.000000 1.000000
+        }
+        device [
+          LinearMotor {
+            name "linear"
+            maxVelocity 10.0
+            maxForce 10.0
+          }
+          PositionSensor {
+            name "linear_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.130000 0.014967 -0.000550
+          rotation -0.013858 -0.999883 -0.006439 0.030002
+          children [
+            Pose {
+              translation 0.053058 -0.010001 0.001946
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Box {
+                     size 0.005000 0.020000 0.003000
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.020942 -0.070001 0.010946
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Box {
+                     size 0.080000 0.001000 0.020000
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.020942 0.039999 0.010946
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Box {
+                     size 0.080000 0.001000 0.020000
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0.000058 -0.000001 0.001946
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Box {
+                     size 0.110000 0.010000 0.003000
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation 0.000058 -0.030001 0.001946
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Box {
+                     size 0.110000 0.010000 0.003000
+                  }
+                }
+              ]
+            }
+            Pose {
+              translation -0.060142 -0.015001 0.016946
+              children [
+                Shape {
+                  appearance PBRAppearance {
+                    baseColor 0.500000 0.500000 0.500000
+                    roughness 1.000000
+                    metalness 0
+                  }
+                  geometry Box {
+                     size 0.011000 0.111000 0.033000
+                  }
+                }
+              ]
+            }
+          ]
+          name "solid(5)"
+          boundingObject Group {
+            children [
+              Pose {
+                translation 0.053058 -0.010001 0.001946
+                children [
+                  Box {
+                     size 0.005000 0.020000 0.003000
+                  }
+                ]
+              }
+              Pose {
+                translation -0.020942 -0.070001 0.010946
+                children [
+                  Box {
+                     size 0.080000 0.001000 0.020000
+                  }
+                ]
+              }
+              Pose {
+                translation -0.020942 0.039999 0.010946
+                children [
+                  Box {
+                     size 0.080000 0.001000 0.020000
+                  }
+                ]
+              }
+              Pose {
+                translation 0.000058 -0.000001 0.001946
+                children [
+                  Box {
+                     size 0.110000 0.010000 0.003000
+                  }
+                ]
+              }
+              Pose {
+                translation 0.000058 -0.030001 0.001946
+                children [
+                  Box {
+                     size 0.110000 0.010000 0.003000
+                  }
+                ]
+              }
+              Pose {
+                translation -0.060142 -0.015001 0.016946
+                children [
+                  Box {
+                     size 0.011000 0.111000 0.033000
+                  }
+                ]
+              }
+            ]
+          }
+          physics Physics {
+          }
+        }
+      }
+    ]
+    name IS name
+  }
+}

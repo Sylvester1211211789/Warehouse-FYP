@@ -1,0 +1,311 @@
+#VRML_SIM R2023b utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the D:/pallet.urdf
+# Extracted from: D:\pallet.urdf
+
+PROTO palle [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        0 0 1 0
+  field  SFString    name            "palle"  # Is `Robot.name`.
+  field  SFString    controller      "void"            # Is `Robot.controller`.
+  field  MFString    controllerArgs  []                # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""                # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE             # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE              # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE             # Is `Robot.selfCollision`.
+  field  SFBool      staticBase      TRUE              # Defines if the robot base should be pinned to the static environment.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Pose {
+        translation 0.450000 -0.009999 -0.060000
+        rotation 0.000000 0.000000 1.000000 1.570800
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.500000 0.500000 0.500000
+              roughness 1.000000
+              metalness 0
+            }
+            geometry Box {
+               size 1.060000 0.100000 0.020000
+            }
+          }
+        ]
+      }
+      Pose {
+        translation 0.020000 -0.010000 -0.060000
+        rotation 0.000000 0.000000 1.000000 1.570800
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.500000 0.500000 0.500000
+              roughness 1.000000
+              metalness 0
+            }
+            geometry Box {
+               size 1.060000 0.100000 0.020000
+            }
+          }
+        ]
+      }
+      Pose {
+        translation -0.450000 -0.010002 -0.060000
+        rotation 0.000000 0.000000 1.000000 1.570800
+        children [
+          Shape {
+            appearance PBRAppearance {
+              baseColor 0.500000 0.500000 0.500000
+              roughness 1.000000
+              metalness 0
+            }
+            geometry Box {
+               size 1.060000 0.100000 0.020000
+            }
+          }
+        ]
+      }
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 1.000000 0.100000 0.100000
+        }
+      }
+    ]
+  }
+  Pose {
+    translation 0.000000 0.470000 0.000000
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 1.000000 0.100000 0.100000
+        }
+      }
+    ]
+  }
+  Pose {
+    translation 0.000000 -0.490000 0.000000
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 1.000000 0.100000 0.100000
+        }
+      }
+    ]
+  }
+  Pose {
+    translation 0.440000 -0.010000 0.060000
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 0.130000 1.050000 0.030000
+        }
+      }
+    ]
+  }
+  Pose {
+    translation 0.280000 -0.010000 0.060000
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 0.130000 1.050000 0.030000
+        }
+      }
+    ]
+  }
+  Pose {
+    translation 0.110000 -0.010000 0.060000
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 0.130000 1.050000 0.030000
+        }
+      }
+    ]
+  }
+  Pose {
+    translation -0.070000 -0.010000 0.060000
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 0.130000 1.050000 0.030000
+        }
+      }
+    ]
+  }
+  Pose {
+    translation -0.250000 -0.010000 0.060000
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 0.130000 1.050000 0.030000
+        }
+      }
+    ]
+  }
+  Pose {
+    translation -0.430000 -0.010000 0.060000
+    children [
+      Shape {
+        appearance PBRAppearance {
+          baseColor 0.500000 0.500000 0.500000
+          roughness 1.000000
+          metalness 0
+        }
+        geometry Box {
+           size 0.130000 1.050000 0.030000
+        }
+      }
+    ]
+  }
+    
+    name IS name
+    boundingObject Group {
+      children [
+        Pose {
+          translation 0.450000 -0.009999 -0.060000
+          rotation 0.000000 0.000000 1.000000 1.570800
+          children [
+            Box {
+               size 1.060000 0.100000 0.020000
+            }
+          ]
+        }
+        Pose {
+          translation 0.020000 -0.010000 -0.060000
+          rotation 0.000000 0.000000 1.000000 1.570800
+          children [
+            Box {
+               size 1.060000 0.100000 0.020000
+            }
+          ]
+        }
+        Pose {
+          translation -0.450000 -0.010002 -0.060000
+          rotation 0.000000 0.000000 1.000000 1.570800
+          children [
+            Box {
+               size 1.060000 0.100000 0.020000
+            }
+          ]
+        }
+        Box {
+           size 1.000000 0.100000 0.100000
+        }
+        Pose {
+          translation 0.000000 0.470000 0.000000
+          children [
+            Box {
+               size 1.000000 0.100000 0.100000
+            }
+          ]
+        }
+        Pose {
+          translation 0.000000 -0.490000 0.000000
+          children [
+            Box {
+               size 1.000000 0.100000 0.100000
+            }
+          ]
+        }
+        Pose {
+          translation 0.440000 -0.010000 0.060000
+          children [
+            Box {
+               size 0.130000 1.050000 0.030000
+            }
+          ]
+        }
+        Pose {
+          translation 0.280000 -0.010000 0.060000
+          children [
+            Box {
+               size 0.130000 1.050000 0.030000
+            }
+          ]
+        }
+        Pose {
+          translation 0.110000 -0.010000 0.060000
+          children [
+            Box {
+               size 0.130000 1.050000 0.030000
+            }
+          ]
+        }
+        Pose {
+          translation -0.070000 -0.010000 0.060000
+          children [
+            Box {
+               size 0.130000 1.050000 0.030000
+            }
+          ]
+        }
+        Pose {
+          translation -0.250000 -0.010000 0.060000
+          children [
+            Box {
+               size 0.130000 1.050000 0.030000
+            }
+          ]
+        }
+        Pose {
+          translation -0.430000 -0.010000 0.060000
+          children [
+            Box {
+               size 0.130000 1.050000 0.030000
+            }
+          ]
+        }
+      ]
+    }
+  }
+

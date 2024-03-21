@@ -1,0 +1,7 @@
+#VRML_OBJ R2021a utf8
+RectangleArena {
+  floorSize 2.5 1.5
+  floorAppearance PBRAppearance {
+    metalness 0
+  }
+}

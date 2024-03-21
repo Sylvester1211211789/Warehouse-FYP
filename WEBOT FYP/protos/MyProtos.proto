@@ -1,0 +1,41 @@
+#VRML_SIM R2023a utf8
+# Describe the functionality of your PROTO here.
+# template language: javascript
+# tags: nonDeterministic
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/tesla/TeslaModel3Simple.proto"
+
+PROTO MyProtos [
+  field SFVec3f translation 0 0 0.4
+  field SFRotation rotation 0 0 1 0
+  field SFColor color 1 0 0
+  field MFColor recognitionColors [ 1 0 0 ]
+  field MFString plate "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/vehicles/protos/textures/plate.jpg"
+  field SFString name "vehicle"
+  field SFString controller "<generic>"
+  field MFString controllerArgs [ ]
+  field SFString window "<generic>"
+  field MFNode sensorsSlotFront [ ]
+  field MFNode sensorsSlotRear [ ]
+  field MFNode sensorsSlotTop [ ]
+  field MFNode sensorsSlotCenter [ ]
+  field SFBool wheelBoundingObject FALSE
+
+]
+{
+  TeslaModel3Simple {
+    translation IS translation
+    rotation IS rotation
+    color IS color
+    recognitionColors IS recognitionColors
+    plate IS plate
+    name IS name
+    controller IS controller
+    controllerArgs IS controllerArgs
+    window IS window
+    sensorsSlotFront IS sensorsSlotFront
+    sensorsSlotRear IS sensorsSlotRear
+    sensorsSlotTop IS sensorsSlotTop
+    sensorsSlotCenter IS sensorsSlotCenter
+    wheelBoundingObject IS wheelBoundingObject
+  }
+}

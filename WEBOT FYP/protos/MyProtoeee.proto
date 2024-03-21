@@ -1,0 +1,36 @@
+#VRML_SIM R2023a utf8
+# Describe the functionality of your PROTO here.
+# template language: javascript
+# tags: nonDeterministic, hidden
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/factory/conveyors/protos/ConveyorBelt.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/appearances/protos/CorrugatedMetal.proto"
+
+PROTO MyProtoeee [
+  field SFVec3f translation 0 0 0
+  field SFRotation rotation 0 0 1 0
+  field SFString name "conveyor belt"
+  field SFString window "<generic>"
+  field SFVec3f size 1.5 0.5 0.6
+  field SFNode appearance CorrugatedMetal { textureTransform TextureTransform { scale 2 2 } } # Defines the appearance of the conveyor belt.
+  field SFFloat borderThickness 0.03 # Defines the thickness of the metal part around the conveyor belt.
+  field SFFloat borderHeight 0.01 # Defines the height of the border around the conveyor.
+  field SFFloat speed 0.5 # Defines the rubber band speed in meters per second.
+  field SFFloat acceleration -1 # Defines the acceleration of the conveyor belt.
+  field SFFloat timer 0.0 # Defines for how long the conveyor belt should move (it will move forever if set to 0).
+
+]
+{
+  ConveyorBelt {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    window IS window
+    size IS size
+    appearance IS appearance
+    borderThickness IS borderThickness
+    borderHeight IS borderHeight
+    speed IS speed
+    acceleration IS acceleration
+    timer IS timer
+  }
+}
