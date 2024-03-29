@@ -1,0 +1,11 @@
+RewriteEngine On
+
+#Testing
+RewriteRule ^Main testt.php [NC,L]
+RewriteRule ^Signup user_signup.php [NC,L]
+RewriteRule ^Admin_register admin_signup.php [NC,L]
+RewriteRule ^Manager_register Manager_signup.php [NC,L]
+RewriteRule ^Login user_login.php [NC,L]
+
+
+
