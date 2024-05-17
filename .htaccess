@@ -1,11 +1,80 @@
 RewriteEngine On
 
-#Testing
-RewriteRule ^Main testt.php [NC,L]
-RewriteRule ^Signup user_signup.php [NC,L]
-RewriteRule ^Admin_register admin_signup.php [NC,L]
-RewriteRule ^Manager_register Manager_signup.php [NC,L]
-RewriteRule ^Login user_login.php [NC,L]
+#Account
+
+#Admin
+RewriteRule ^a_delete_account account_admin_delete_all.php [NC,L]
+RewriteRule ^a_edit_address account_admin_edit_address_all.php [NC,L]
+RewriteRule ^a_edit_company account_admin_edit_company_user.php [NC,L]
+RewriteRule ^a_edit_email account_admin_edit_email_all.php [NC,L]
+RewriteRule ^a_list_account account_admin_list_all.php [NC,L]
+RewriteRule ^a_signup account_admin_signup_admin.php [NC,L]
+
+#All
+
+RewriteRule ^al_login account_all_login_all.php [NC,L]
+RewriteRule ^al_logout account_all_logout_all.php [NC,L]
+RewriteRule ^al_other account_all_other.php [NC,L]
+RewriteRule ^al_profile account_all_profile_all.php [NC,L]
+RewriteRule ^al_setting account_all_setting.php [NC,L]
+RewriteRule ^al_update_email account_all_update_email_all.php [NC,L]
+RewriteRule ^al_update_name account_all_update_name_all.php [NC,L]
+RewriteRule ^al_update_number account_all_update_number_all.php [NC,L]
+RewriteRule ^al_update_password account_all_update_password_all.php [NC,L]
+
+#Manager
+RewriteRule ^m_signup account_manager_signup_manager.php [NC,L]
+
+#User
+RewriteRule ^u_reset_password account_user_reset_password_user.php [NC,L]
+RewriteRule ^OTP reset_passwordssss.php [NC,L]
+RewriteRule ^new_password passwordchanged.php [NC,L]
+
+RewriteRule ^u_signup account_user_signup_user.php [NC,L]
+RewriteRule ^u_update_address account_user_update_address_user.php [NC,L]
+RewriteRule ^u_update_company account_user_update_company_user.php [NC,L]
+
+#Block
+RewriteRule ^a_block_add block_admin_add.php [NC,L]
+RewriteRule ^a_block_delete block_admin_delete.php [NC,L]
+RewriteRule ^a_block_edit_name block_admin_edit_name.php [NC,L]
+RewriteRule ^a_block_more block_admin_more.php [NC,L]
+
+#inbound outbound
+RewriteRule ^am_inoutbound inoutbound_admin_manager.php [NC,L]
+
+RewriteRule ^all_inoutbound_history inoutbound_all_history_all.php [NC,L]
+
+RewriteRule ^u_inoutbound inoutbound_user.php [NC,L]
+
+#payment
+RewriteRule ^am_edit_payment payment_admin_manager_edit_user.php [NC,L]
+RewriteRule ^am_history_payment payment_admin_manager_history_user.php [NC,L]
+
+RewriteRule ^more_payment payment_more.php [NC,L]
+
+RewriteRule ^u_history_payment payment_user_history_user.php [NC,L]
+RewriteRule ^u_pay_payment payment_user_pay_user.php [NC,L]
+
+#Product
+RewriteRule ^a_add_product product_add_admin_user.php [NC,L]
+RewriteRule ^a_list_product product_admin_list_user.php [NC,L]
+RewriteRule ^au_update_product product_admin_user_update_user.php [NC,L]
+
+
+
+
+#main
+RewriteRule ^main index.php [NC,L]
+
+
+
+RewriteRule ^edit admin_edit_account_more.php [NC,L]
+RewriteRule ^list admin_account_more.php [NC,L]
+RewriteRule ^chart chart.php [NC,L]
+
+
+
 
 
 
