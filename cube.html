@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with LeadMark landing page.">
+    <meta name="author" content="Devcrud">
+ 
+    <title>CRSST WAREHOUSE </title>    
+    <link rel="stylesheet" href="cube_style.css">
+</head>
+<body>
+    
+    <div class="cubeh" id="aiButton" style="margin-top:500px; z-index:1000; position: absolute;">
+        <div id="message" style="z-index:1000;">
+            <p>Chat CUBE</p>
+        </div>
+        <div class="custom-loader"></div>
+    </div>
+  
+    <div class="aiPopup" id="aiPopup" style="z-index:1001;">
+        <div class="aiContent" id="messageContainer" style="z-index:1001;">
+            <span class="close" id="closePopup" style="z-index:1001;">&times;</span>
+            <div id="messages" style="z-index:1001;">
+                <h2>CHAT CUBE</h2>
+                <p>How can I assist you today? <br><br><b>'Account'</b> account problem <br><b>'Bound'</b> in/outbound problem <br><b>'Payment'</b> payment problem</p><br>
+                <div class='navbarss' style="width:320px;">
+                    <input type="text" id="userInputs" placeholder="Search">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("aiButton").addEventListener("click", function() {
+            document.getElementById("aiPopup").style.display = "block";
+        });
+
+        document.getElementById("closePopup").addEventListener("click", function() {
+            document.getElementById("aiPopup").style.display = "none";
+        });
+
+        document.getElementById("userInputs").addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) { 
+                var choice = document.getElementById("userInputs").value;
+                document.getElementById("userInputs").value = ""; 
+                if (choice === "Account" || choice === "account") {
+                    hideButtons();
+                    addUserMessage("Account");
+                    addTypingIndicator();
+                    setTimeout(function() {
+                        addMessage("If you don't have any account you can click <a href='http://localhost/warehouse/main?signup'>Create Account</a> or if you want to manage account information, you can click below button.<div class='bot'><a href='http://localhost/warehouse/al_profile'>Manage Account</a> <br>'Back' to go back to Menu", "aiMessage");
+                        clearTypingIndicator();
+                    }, 2000); 
+                } else if (choice === "bound" || choice === "Bound") {
+                    hideButtons();
+                    addUserMessage("Inbound & Outbound");
+                    addTypingIndicator();
+                    setTimeout(function() {
+                        addMessage("For Inbound Outbound and location, you can click the bottom button.  <div class='bot'> <a href='http://localhost/warehouse/u_inoutbound'>In/outbound</a></div> If you have any other problem or queries, you can contact our support team at CRSSTWare@gmail.com.", "aiMessage");
+                        clearTypingIndicator();
+                    }, 2000);
+                } else if (choice === "Payment" || choice === "payment") {
+                    hideButtons();
+                    addUserMessage("Payment");
+                    addTypingIndicator();
+                    setTimeout(function() {
+                        addMessage("For payment and payment history, you can choose bottom button.  <div class='bot'> <a href=''>Payment</a> <a href=''>Payment History</a></div>  For payment-related queries, please check our <a href='#'>FAQ</a> section or contact our billing department 0630995555.", "aiMessage");
+                        clearTypingIndicator();
+                    }, 2000);
+                } else if (choice === "4") {
+                    hideButtons();
+                    addUserMessage("Back");
+                    addTypingIndicator();
+                    setTimeout(function() {
+                        addMessage(" <br><br><b>'Account'</b> account problem <br><b>'Bound'</b> in/outbound problem <br><b>'Payment'</b> payment problem<br>", "aiMessage");
+                        clearTypingIndicator();
+                    }, 2000);
+                } else  {
+                    addMessage("Invalid choice. Please enter 'Account' for account problem, 'Bound' for inbound and outbound problem, or 'Payment' for payment problem.","aiMessage");
+                }
+            }
+        });
+
+        function hideButtons() {
+            document.querySelectorAll(".bot a").forEach(function(button) {
+                button.style.display = "none";
+            });
+        }
+
+        function addTypingIndicator() {
+            var messages = document.getElementById("messages");
+            var typingIndicator = document.createElement("div");
+            typingIndicator.className = "typingIndicator";
+            typingIndicator.innerHTML = "Typing <span class='dot-1'></span><span class='dot-2'></span><span class='dot-3'></span>";
+            messages.appendChild(typingIndicator);
+            document.getElementById("messageContainer").scrollTop = document.getElementById("messageContainer").scrollHeight;
+        }
+
+        function addUserMessage(message) {
+            var messages = document.getElementById("messages");
+            var userMessage = document.createElement("div");
+            userMessage.className = "userMessage";
+            userMessage.textContent = message;
+            messages.appendChild(userMessage);
+            document.getElementById("messageContainer").scrollTop = document.getElementById("messageContainer").scrollHeight;
+        }
+
+        function addMessage(message, className) {
+            var messages = document.getElementById("messages");
+            var newMessage = document.createElement("div");
+            newMessage.className = className;
+            newMessage.innerHTML = message;
+            messages.appendChild(newMessage);
+            document.getElementById("messageContainer").scrollTop = document.getElementById("messageContainer").scrollHeight; 
+        }
+
+        function clearTypingIndicator() {
+            var typingIndicators = document.getElementsByClassName("typingIndicator");
+            for (var i = typingIndicators.length - 1; i >= 0; i--) {
+                typingIndicators[i].remove();
+            }
+        }
+
+        function showMessage() {
+            const message = document.getElementById('message');
+            message.style.display = 'block';
+
+            setTimeout(function() {
+                message.style.display = 'none';
+            }, 4000);
+        }
+
+        showMessage();
+    </script>
+</body>
+</html>

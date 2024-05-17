@@ -1,0 +1,292 @@
+      /* AI */
+
+        .ai {
+            display: none; 
+        }
+
+        .cubeh:hover #message {
+            display: block;
+            position: fixed;
+            background-color: #fff;
+            color: #1a1a1a;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+            margin-left: 100px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .containerz {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #aiButton {
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .aiPopup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            left: 5px;
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-height: 300px;
+            overflow-y: scroll;
+            z-index: 100;
+            color:black;
+        }
+
+        .aiContent {
+            padding: 20px;
+        }
+
+        .close {
+            float: right;
+            cursor: pointer;
+        }
+
+        .response {
+            margin-top: 10px;
+        }
+
+        .userMessage {
+            text-align: right;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .aiMessage {
+            text-align: left;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .typingIndicator {
+            text-align: left;
+            margin-bottom: 10px;
+            color: #aaa;
+        }
+
+        .dot-1, .dot-2, .dot-3 {
+            display: inline-block;
+            margin-left: 3px;
+            width: 10px;
+            height: 10px;
+            background-color: #aaa;
+            border-radius: 50%;
+            animation: typing 1.5s infinite;
+        }
+
+        @keyframes typing {
+            0% { opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+
+        .dot-2 {
+            animation-delay: 0.2s;
+        }
+
+        .dot-3 {
+            animation-delay: 0.4s;
+        }
+
+        .bot a {
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 5px 10px;
+            margin: 5px;
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+        }
+
+        .bot a:hover {
+            background-color: #eee;
+        }
+
+        .navbarss {
+            position: fixed;
+            bottom: 0;
+            left: 0px;
+            width: 19.8%;
+            margin-left:2px;
+            margin-bottom:10px;
+        }
+
+        .navbarss input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 0 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 14px;
+            margin-left:3px;
+        }
+
+        .navbarss a {
+            font-size: 14px;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .aad-container {
+            width: 100%;
+            height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .aad-image {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .aad-image:first-child {
+            opacity: 1;
+        }
+
+        .anav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ccc;
+            border: none;
+            color: #000;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .anav-btn:hover {
+            background-color: #ddd;
+        }
+
+        .aprev-btn {
+            left: 0;
+        }
+
+        .anext-btn {
+            right: 0;
+        }      
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px); /* Apply blur effect */
+            z-index: 9999;
+        }
+
+        .popup-content {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .popup #Exit{
+            transform: translate(-50%, -50%);             
+            z-index: 9999;   
+            position: fixed;
+            left: 60%;
+            background-color: black;
+            color:white;
+        }
+
+        .popup #Exits{
+            transform: translate(-50%, -50%);             
+            z-index: 9999;   
+            position: fixed;
+            left: 65%;
+            background-color: black;
+            color:white;
+        }
+
+        /*cube*/
+        .cubeh {
+            padding-left: 40px;
+            margin-top:700px;
+            z-index: 1000;
+        }
+
+        #message {
+            position: fixed;
+            display: none;
+            background-color: #fff;
+            color: #1a1a1a;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 5px;
+            margin-left: 100px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+
+        /*Buttonnnnn*/
+
+        .custom-loader {
+            position: fixed; /* Keep the element fixed relative to the viewport */
+            bottom: 150px; /* Distance from the bottom of the viewport */
+            left: 20px; /* Distance from the left of the viewport */
+            width: 70px;
+            height: 70px;
+            background: #ffa600;
+            border-radius: 50px;
+            -webkit-mask: radial-gradient(circle 31px at 50% calc(100% + 13px),#000 95%,#0000) top 4px left 50%,
+                radial-gradient(circle 31px,#000 95%,#0000) center,
+                radial-gradient(circle 31px at 50% -13px,#000 95%,#0000) bottom 4px left 50%,
+                linear-gradient(#000 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            -webkit-mask-repeat: no-repeat;
+            animation: cu10 1.5s infinite;
+        }
+
+        @keyframes cu10 {
+            0% {
+                -webkit-mask-size: 0 18px,0 18px,0 18px,auto;
+            }
+            16.67% {
+                -webkit-mask-size: 100% 18px,0 18px,0 18px,auto;
+            }
+            33.33% {
+                -webkit-mask-size: 100% 18px,100% 18px,0 18px,auto;
+            }
+            50% {
+                -webkit-mask-size: 100% 18px,100% 18px,100% 18px,auto;
+            }
+            66.67% {
+                -webkit-mask-size: 0 18px,100% 18px,100% 18px,auto;
+            }
+            83.33% {
+                -webkit-mask-size: 0 18px,0 18px,100% 18px,auto;
+            }
+            100% {
+                -webkit-mask-size: 0 18px,0 18px,0 18px,auto;
+            }
+        }
