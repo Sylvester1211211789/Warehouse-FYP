@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sending Mail</title>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "crsstwarehouse@gmail.com",
+                Password: "pfrfgjjveyrbqeyx",
+                To: 'sylvesteronglide808@gmail.com',
+                From: "samuelonglikang808@gmail.com",
+                Subject: "Sending Email using JavaScript",
+                Body: "Well, that was easy!!",
+                Attachments: [
+                    {
+                        name: "2025_report.pdf",
+                        path: "Downloads/2025_report.pdf"
+                    }]
+            })
+            .then(function (message) {
+                alert("Mail has been sent successfully");
+            })
+            .catch(function (error) {
+                console.error("Error: ", error);
+                alert("Failed to send email. Please check the console for details.");
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Send Email</h2>
+    <button onclick="sendEmail()">Send Email</button>
+</body>
+</html>
