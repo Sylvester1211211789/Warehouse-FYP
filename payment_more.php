@@ -1,11 +1,12 @@
 <?php
+require_once('bootstrap.php');
 include('sambung.php');
 session_start();
 
 
 if (!isset($_SESSION['Status']) || !isset($_SESSION['ID']) || !isset($_SESSION['Name'])) {
 
-    header("Location: user_login.php");
+    header("Location: http://localhost/warehouse/al_login");
     exit(); 
 }
 
@@ -25,6 +26,7 @@ if ($Status == 'admin' || $Status == 'manager') {
 }
 
 $sambungan->close();
+include('header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,29 +34,29 @@ $sambungan->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>More Payment</title>
-    <link rel="stylesheet" type="text/css" href="style_account.css">
+    <link rel="stylesheet" type="text/css" href="sss.css">
 </head>
 <body>
     <div class="AccountContainer">
         <h1>More Payment</h1>
-        <form action="account_setting.php" method="post">
+        <form  method="post">
             <?php if($boo==2){?>
             <table>
                 <tr>
-                    <td><a href="payment.php">Payment</a></td>
+                    <td><a href="http://localhost/warehouse/u_pay_payment">Payment</a></td>
                 </tr>
                 <tr>
-                    <td><a href="payment_history.php">Payment History</a></td>
+                    <td><a href="http://localhost/warehouse/u_history_payment">Payment History</a></td>
                 </tr>
 
             </table>
              <?php } elseif($boo== 1){ ?>
                         <table>
                 <tr>
-                    <td><a href="profile.php">Edit User Payment</a></td>
+                    <td><a href="http://localhost/warehouse/am_edit_payment">Edit User Payment</a></td>
                 </tr>
                 <tr>
-                    <td><a href="user_payment_list.php">Payment List</a></td>
+                    <td><a href="http://localhost/warehouse/am_history_payment">Payment List</a></td>
                 </tr>
 
             </table>

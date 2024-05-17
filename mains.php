@@ -1,282 +1,70 @@
+<?php
+
+require_once('bootstrap.php');
+include('sambung.php');
+session_start();
+include('head.html');
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cube_style.css">
+    <link rel="stylesheet" href="bodystyle.css"> 
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f7fd; /* Light blue background */
+            color: #333; /* Dark gray text */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #1e90ff; /* Medium blue header */
+            color: #fff; /* White text */
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #1e90ff; /* Medium blue footer */
+            color: #fff; /* White text */
+            padding: 10px;
+            width: 100%;
+            bottom: 0;
+        }
+        main {
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+        }
+
+
+        }
+
+    </style>
     <title>Smart Warehouse</title>
         <style>
 
-.navbar {
 
-  padding-left: 580px;
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navbar a {
-  padding-left:20px;
-  float:left;
-  font-size: 24px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
- float:left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 26px;  
-  border: none;
-  outline: none;
-  color: white;
-  padding: 8px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
-
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
-
-  color:red;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #1a1a1a;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  font-size: 20px;
-  float: none;
-  color: white;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-.dropdown-content a:hover {
-  background-color: darkgrey;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
- .ai {
-  display: none; /* Initially hide the "ai" class */
-}
-
-.cubeh:hover .ai{
-  display: block;
-  position: fixed;
-  background-color: #fff;
-  color: #1a1a1a;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 5px;
-  margin-left: 100px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-            
-            
-/* Ai button*/
-            
-    .containerz {
-      text-align: center;
-      margin-top: 50px;
-    }
-#aiButton {
-  color: black;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.aiPopup {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  left: 5px;
-  width: 300px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-      max-height: 300px;
-     overflow-y: scroll;
-  z-index: 1;
-    color:black;
-}
-
-.aiContent {
-  padding: 20px;
-}
-
-.close {
-  float: right;
-  cursor: pointer;
-}
-.response {
-      margin-top: 10px;
-    }
-
-    .userMessage {
-      text-align: right;
-      margin-bottom: 10px;
-      color: #007bff;
-    }
-
-    .aiMessage {
-      text-align: left;
-      margin-bottom: 10px;
-      color: #000;
-    }
-
-    .typingIndicator {
-      text-align: left;
-      margin-bottom: 10px;
-      color: #aaa;
-    }
-
-    .dot-1, .dot-2, .dot-3 {
-      display: inline-block;
-      margin-left: 3px;
-      width: 10px;
-      height: 10px;
-      background-color: #aaa;
-      border-radius: 50%;
-      animation: typing 1.5s infinite;
-    }
-
-    @keyframes typing {
-      0% { opacity: 0.5; }
-      50% { opacity: 1; }
-      100% { opacity: 0.5; }
-    }
-
-    .dot-2 {
-      animation-delay: 0.2s;
-    }
-
-    .dot-3 {
-      animation-delay: 0.4s;
-    }
-
-    .bot a {
-      border: 1px solid black;
-      border-radius: 20px;
-      padding: 5px 10px;
-      margin: 5px;
-      display: inline-block;
-      text-decoration: none;
-      color: black;
-    }
-
-    .bot a:hover {
-      background-color: #eee;
-    }
-    .navbarss {
-      position: fixed;
-      bottom: 0;
-      left: 0px;
-      width: 19.8%;
-
-      margin-left:2px;
-      margin-bottom:10px;
-    }
-
-    .navbarss input[type="text"] {
-      width: calc(100% - 20px);
-      padding: 10px;
-      margin: 0 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      outline: none;
-      font-size: 14px;
-      margin-left:3px;
-    }
-
-    .navbarss a {
-      font-size: 14px;
-      color: white;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-
-    }
-            
-            
-            
-  /* Styles for the ad container */
-  .aad-container {
-    width: 100%;
-    height: 500px;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  /* Styles for the images */
-  .aad-image {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  /* Show the first image by default */
-  .aad-image:first-child {
-    opacity: 1;
-  }
-
-  /* Styles for navigation buttons */
-  .anav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #ccc;
-    border: none;
-    color: #000;
-    padding: 10px;
-    cursor: pointer;
-  }
-  .anav-btn:hover {
-    background-color: #ddd;
-  }
-  .aprev-btn {
-    left: 0;
-  }
-  .anext-btn {
-    right: 0;
-  }            
 </style>
 </head>
 <body>
-    <header> 
-        <div class="head_text">
-        <h1>CRSST WAREHOUSE</h1>
-        
-      </div>
-      <div class="cubeh" id="aiButton">
+                  <div class="aad-container">
+  <img class="aad-image" src="pps.png" alt="Advertisement Image 1" data-link="http://localhost/warehouse/inbound.php">
+  <img class="aad-image" src="warehouses.png" alt="Advertisement Image 2" data-link="http://localhost/warehouse/inbound.php">
+
+                      
+</div>         
+              <div class="cubeh" id="aiButton">
         <div id="message">
-          <p>This is an automatic message!</p>
+          <p>Chat CUBE</p>
         </div>
-          <div class = "ai">
-          <p>Chat Cube</p></div>
+
       <div class="cube-loader">
         <div class="cube-top"></div>
         <div class="cube-wrapper">
@@ -301,38 +89,23 @@
     </div>
         </div>
   </div>
+    <header> 
+        <div class="head_text">
+        <h1>CRSST WAREHOUSE</h1>
+        
+      </div>
+
         
     </header>
 
-    <div class="navbar">
-  <a href="main.html">Home</a>
-  <a href="user_array.php">Control</a>
-  <a href="account_setting.php">Profile</a>       
-  <div class="dropdown">
-    <button class="dropbtn"> ☰
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="payment_more.php">Payment</a>
-      <a href="bound_list.php">In/Outbound History</a>
-    </div>
-  </div> 
-</div>
     <main>
 
-              <div class="aad-container">
-  <img class="aad-image" src="pp.png" alt="Advertisement Image 1" data-link="https://example.com/link1">
-  <img class="aad-image" src="signin.png" alt="Advertisement Image 2" data-link="https://example.com/link2">
-  <img class="aad-image" src="password.png" alt="Advertisement Image 3" data-link="https://example.com/link3">
-  <button class="anav-btn aprev-btn" onclick="changeImage(-1)"> ◀  </button>
-  <button class="anav-btn anext-btn" onclick="changeImage(1)"> ▶ </button>
-</div>    <br>      
-        
+
         
         
         <div class = 'introduction'>
         <p >CRSST which is Centre of Remote Sensing & Surveillance Technologies is in MMU Malacca, MMU Cyberjaya and Nusajaya. CRSST setup is in 1996 and fully operational at 1197. The primary aim of CRSST is to promote the growth of research and development in the areas of advanced remote sensing and surveillance technologies, which encompasses advanced remote sensing systems, vision-based surveillance solutions, and their related applications. In 1997 to 2005 CRSST was named as Remote Sensing group, 2006 – 2010 was named as Centre for Applied EM and in 2011 until now is CRSST.</p>
-    </div> <!-- Your content goes here -->
+    </div> 
 
         
         
@@ -364,16 +137,19 @@
           
       
       </div>
-      
 
 </main>
     <footer>
+                
         &copy; 2023 CRSST Warehouse
         <div class="footer">By Sylvester, Samuel & Tai</div>
     </footer>
 
     <script>
    
+
+        
+        
         document.getElementById("aiButton").addEventListener("click", function() {
       document.getElementById("aiPopup").style.display = "block";
     });
@@ -391,7 +167,7 @@
           addUserMessage("Account");
           addTypingIndicator();
           setTimeout(function() {
-            addMessage("If you don't have any account you can click <a href=''>Create Account</a> or if you have any problem with your account, you can choose from below.<div class='bot'><a href='#'>Change Company Name</a> <a href='#'>Change Name</a> <a href='#'>Change Address</a> <a href='#'>Change Phone Number</a> <a href='#'>Change Password</a> <br>'Back' to go back to Menu", "aiMessage");
+            addMessage("If you don't have any account you can click <a href='http://localhost/warehouse/u_signup'>Create Account</a> or if you want to manage account information, you can click below button.<div class='bot'><a href='http://localhost/warehouse/al_update_name'>Manage Account</a> <br>'Back' to go back to Menu", "aiMessage");
             clearTypingIndicator();
           }, 2000); 
         } else if (choice === "bound" || choice === "Bound") {
@@ -399,7 +175,7 @@
           addUserMessage("Inbound & Outbound");
           addTypingIndicator();
           setTimeout(function() {
-            addMessage("For Inbound Outbound and location, you can click the bottom button .  <div class='bot'> <a href=''>In/outbound</a></div> If you have any other problem or queries, you can contact our support team at CRSSTWare@gmail.com.", "aiMessage");
+            addMessage("For Inbound Outbound and location, you can click the bottom button .  <div class='bot'> <a href='http://localhost/warehouse/u_inoutbound'>In/outbound</a></div> If you have any other problem or queries, you can contact our support team at CRSSTWare@gmail.com.", "aiMessage");
             clearTypingIndicator();
           }, 2000);
         } else if (choice === "Payment" || choice === "payment") {
@@ -497,9 +273,7 @@
     autoSwipeTimer = setTimeout(() => changeImage(1), 5000); // Change image automatically after 5 seconds
   }
 
-  // Change image on button click
-  document.querySelector('.aprev-btn').addEventListener('click', () => changeImage(-1));
-  document.querySelector('.anext-btn').addEventListener('click', () => changeImage(1));
+
 
   // Add link functionality to images
   const adLinks = document.querySelectorAll('.aad-image');
@@ -513,6 +287,44 @@
   // Start automatic forward swiping initially
   autoSwipeTimer = setTimeout(() => changeImage(1), 5000); // Change image automatically after 5 seconds
     </script>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
 </body>
 </html>
 
